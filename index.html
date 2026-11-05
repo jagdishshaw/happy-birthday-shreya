@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Shreya! ♥ — Celebration &amp; Memories</title>
+  <meta name="description"
+    content="A magical retro-pop animated birthday postcard and celebration dashboard with interactive memories, music, and surprises for Shreya.">
+
+  <!-- Combined Google Fonts for Postcard and Dashboard Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@1,600;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Righteous&display=swap"
+    rel="stylesheet">
+
+  <!-- Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=pastel2">
+</head>
+
+<body>
+  <!-- Ambient Cosmic Stage Background (Visible on Postcard View) -->
+  <div class="bg-scene" id="bgScene">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+    <div class="bg-stars" id="bgStars"></div>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 1: RETRO-POP BIRTHDAY POSTCARD (LANDING VIEW)
+       ========================================================================= -->
+  <div class="view-screen active" id="postcardView">
+    <!-- Header Bar -->
+    <header class="top-nav" id="postcardHero">
+      <div class="nav-controls">
+        <button type="button" class="nav-btn" id="soundToggle" title="Toggle Sound FX" aria-label="Toggle Sound">
+          <span id="soundIcon">🔊</span>
+          <span id="soundLabel">Music: ON</span>
+        </button>
+        <button type="button" class="nav-btn" id="confettiCannonBtn" title="Launch Confetti"
+          aria-label="Launch Confetti">
+          🎉 Party Blast
+        </button>
+        <button type="button" class="nav-btn nav-skip-btn" id="navExploreDashboard" title="Open Celebration Dashboard">
+          Explore Dashboard ➔
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Hero Stage -->
+    <main class="hero-stage">
+
+      <!-- Floating Real Visual Asset Decorators -->
+      <div class="floating-assets-container" id="floatingAssets">
+
+        <!-- Top Left: Floating Balloons Bouquet -->
+        <div class="floating-asset asset-balloons" id="assetBalloons" data-speed="5.0">
+          <img src="public/assets/balloons.png" alt="Colorful Retro Birthday Balloons Bouquet" loading="eager">
+          <div class="asset-shadow"></div>
+        </div>
+
+        <!-- Bottom Left: Popping Champagne Bottle -->
+        <div class="floating-asset asset-champagne" id="assetChampagne" data-speed="1.5">
+          <img src="public/assets/champagne.png" alt="Popping Party Champagne Bottle" loading="eager">
+          <div class="asset-sparkles"></div>
+        </div>
+
+        <!-- Top Right: Retro Disco UFO Spacecraft -->
+        <div class="floating-asset asset-ufo" id="assetUfo" data-speed="1.8">
+          <img src="public/assets/ufo.png" alt="Retro Disco UFO with Rainbow Light Beam" loading="eager">
+          <div class="ufo-beam-glow"></div>
+        </div>
+
+        <!-- Bottom Right: Festive Gift Box -->
+        <div class="floating-asset asset-gift" id="assetGift" data-speed="1.1">
+          <img src="public/assets/gift.png" alt="Festive Retro Birthday Present" loading="eager">
+          <div class="gift-tag">FOR YOU</div>
+        </div>
+
+        <!-- Bottom Far Right: Retro Swirl Lollipop -->
+        <div class="floating-asset asset-lollipop" id="assetLollipop" data-speed="1.3">
+          <img src="public/assets/lollipop.png" alt="Retro Candy Swirl Lollipop" loading="eager">
+        </div>
+
+      </div>
+
+      <!-- Central Interactive Postcard Presentation -->
+      <div class="postcard-wrapper" id="postcardWrapper">
+        <div class="postcard-card" id="postcardCard">
+
+          <!-- Postcard Header Border & Airmail Stripes -->
+          <div class="postcard-airmail-edge"></div>
+
+          <!-- Postcard Stamp & Postal Seal -->
+          <div class="postcard-header-meta">
+            <div class="postmark-circle" id="postmarkCircle" title="Today is a special celebration day!">
+              <span class="postmark-city">CELEBRATE</span>
+              <span class="postmark-date">★ TODAY ★</span>
+              <span class="postmark-wavy">〰〰〰</span>
+            </div>
+
+            <div class="postage-stamp" id="postageStamp" title="Click to open birthday wish & cake!">
+              <div class="stamp-inner">
+                <span class="stamp-rate">VIP</span>
+                <span class="stamp-emoji">🎂</span>
+                <span class="stamp-text">AIR MAIL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Central Shot: Kristina Ooo's Original Animated Postcard -->
+          <div class="postcard-media-frame" id="mediaFrame">
+            <img id="heroPostcardImg" class="postcard-hero-img" src="public/assets/birthday_postcard_hero.gif"
+              alt="Surreal Retro Psychedelic Birthday Postcard Artwork by Kristina Ooo">
+            <div class="media-overlay-sheen"></div>
+
+            <!-- THE REQUESTED CENTER BUTTON: "Let's begin" — Switches directly to Dashboard View! -->
+            <div class="center-cta-anchor" id="centerCtaAnchor">
+              <button type="button" id="beginBtn" class="btn-begin" aria-label="Let's begin">
+                <span class="btn-ring-pulse"></span>
+                <span class="btn-bg-fill"></span>
+                <span class="btn-content">
+                  <span class="btn-star">✦</span>
+                  <span class="btn-label">Let's begin</span>
+                  <span class="btn-sparkle">✨</span>
+                </span>
+              </button>
+              <p class="cta-micro-hint">Tap to open your birthday surprise</p>
+            </div>
+          </div>
+
+          <!-- Postcard Footer Details -->
+          <footer class="postcard-footer">
+            <div class="postcard-caption">
+              <h1 class="postcard-title">Birthday Postcard</h1>
+              <p class="postcard-subtitle">A cosmic celebration journey &bull; Made with love</p>
+            </div>
+            <div class="postcard-barcode">
+              <span class="bar-line"></span>
+              <span class="bar-line"></span>
+              <span class="bar-line"></span>
+              <span class="bar-line wide"></span>
+              <span class="bar-line"></span>
+              <span class="bar-line wide"></span>
+              <span class="bar-line"></span>
+              <span class="bar-code-number">★ 2026-BIRTHDAY ★</span>
+            </div>
+          </footer>
+          <!-- Personal Voice Message -->
+<section class="voice-section">
+
+    <h2>💌 A Special Message For You</h2>
+
+    <p>I have something special to tell you, Shreya ❤️</p>
+
+    <audio id="birthdayVoice" src="/birthday-voice.mp3"></audio>
+
+    <button onclick="playBirthdayVoice()">
+        ❤️ Listen to My Voice
+    </button>
+
+</section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Interactive Reveal Modal / Postcard Flip (Accessible via Postal Stamp or Secret Wish) -->
+    <div class="reveal-modal" id="revealModal" inert>
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-dialog">
+        <button type="button" class="modal-close" id="modalClose" aria-label="Close message">&times;</button>
+
+        <div class="modal-inner-card">
+          <div class="modal-header">
+            <div class="modal-stamp">💌 AIR MAIL</div>
+            <h2 class="modal-title">Happy Birthday, Shreya! 🎂</h2>
+            <p class="modal-subtitle">The celebration has officially begun!</p>
+          </div>
+
+          <div class="modal-body">
+            <div class="interactive-cake-spot">
+              <div class="cake-display-wrap">
+                <img src="public/assets/cake.png" alt="Birthday Cake Slice" class="modal-cake-img" id="modalCake">
+                <div class="candle-flame" id="candleFlame" title="Click to blow out candle!">🔥</div>
+              </div>
+              <p class="cake-tip" id="cakeTip">Click the flame to make a wish &amp; blow out the candle! 🎂</p>
+            </div>
+
+            <div class="wish-letter" id="wishLetter">
+              <p class="letter-salutation">Dearest Shreya,</p>
+              <p class="letter-text" id="typewriterText">
+                Wishing you a birthday as vibrant, magical, and out-of-this-world as this psychedelic cosmic postcard!
+                May
+                your year ahead sparkle with sweet joys, unstoppable laughter, vibrant dreams, and delicious adventures.
+              </p>
+              <p class="letter-signoff">Cheers to you &bull; Happy Birthday! 🥂✨</p>
+            </div>
+
+            <div class="modal-interactive-actions">
+              <button type="button" class="action-btn" id="popChampagneBtn">
+                🍾 Pop Champagne
+              </button>
+              <button type="button" class="action-btn" id="openGiftBtn">
+                🎁 Open Gift
+              </button>
+              <button type="button" class="action-btn btn-primary" id="blastMoreConfetti">
+                ✨ More Confetti!
+              </button>
+              <button type="button" class="action-btn btn-explore" id="modalGoDashboard">
+                🎉 Open Photo Memories ➔
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <span class="footer-tag">POSTCARD CELEBRATION &bull; 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 2: BIRTHDAY CELEBRATION DASHBOARD (OPENED BY "LET'S BEGIN")
+       ========================================================================= -->
+  <div class="view-screen" id="dashboardView">
+    <section class="dashboard-section" id="dashboardSection">
+
+      <!-- Sticky Dashboard Navigation -->
+      <nav class="dashboard-navbar" id="dashboardNav">
+        <div class="brand">For <span class="accent-name"><sub>Shreya</sub></span> <span class="heart-symbol">♥</span>
+        </div>
+        <div class="dashboard-nav-right">
+          <button type="button" class="nav-ghost-btn" id="backToPostcardBtn" title="Back to Postcard">
+            💌 Postcard
+          </button>
+          <button class="music-btn" type="button" id="musicBtn" aria-label="Toggle violin music"
+            title="Play Violin Music">🎻</button>
+        </div>
+      </nav>
+
+      <div class="dashboard-content">
+        <!-- Hero Header Section -->
+        <section class="hero section">
+          <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+          <h1><span class="playful-target">Happy</span> <span class="playful-target">Birthday,</span><br><em
+              class="accent-name playful-target">Shreya</em> <span
+              class="heart-symbol playful-target">♥</span></h1>
+          <p class="hero-text">
+            Today is all about celebrating you and the happiness you bring into the lives of the people around you.wishing you a happy woderfull birthday  to my love shreya. May your day be filled with love
+          </p>
+
+          <div class="heart-row">
+            <span class="heart-symbol">♥</span>
+            <span class="heart-symbol">♥</span>
+            <span class="heart-symbol">♥</span>
+            HAPPY BIRTHDAY SHREYA
+            <span class="heart-symbol">♥</span>
+            <span class="heart-symbol">♥</span>
+            <span class="heart-symbol">♥</span>
+          </div>
+
+          <button type="button" class="primary-btn" id="celebrateBtn">
+            Start the Celebration <span>↗</span>
+          </button>
+
+          <div class="scroll-hint">↓ &nbsp; scroll to explore &nbsp; ↓</div>
+        </section>
+
+        <!-- 20 Memory Photos Grid Section -->
+        <section class="memories section" id="memories">
+          <p class="eyebrow">A FEW SPECIAL MOMENTS WITH MY LOVE</p>
+          <h2><span class="playful-target">Our</span> <span class="playful-target">Beautiful</span> <em
+              class="playful-target">Memories</em></h2>
+          <p class="section-subtitle">
+            A collection of priceless moments, endless laughs, and sweet memories with you. <span
+              class="heart-symbol">♥</span>
+          </p>
+
+          <div class="memory-grid" id="memoryGrid">
+            <!-- Photo Slot 01 -->
+            <article class="memory-card card-tall" id="photo-01" data-slot="photo-01">
+              <img src="dashboard/images/photo-01.jpg" alt="photo-01" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 02 -->
+            <article class="memory-card" id="photo-02" data-slot="photo-02">
+              <img src="dashboard/images/photo-02.jpg" alt="photo-02" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 03 -->
+            <article class="memory-card" id="photo-03" data-slot="photo-03">
+              <img src="dashboard/images/photo-03.jpg" alt="photo-03" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 04 -->
+            <article class="memory-card card-tall" id="photo-04" data-slot="photo-04">
+              <img src="dashboard/images/photo-04.jpg" alt="photo-04" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 05 -->
+            <article class="memory-card" id="photo-05" data-slot="photo-05">
+              <img src="dashboard/images/photo-05.jpg" alt="photo-05" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 06 -->
+            <article class="memory-card" id="photo-06" data-slot="photo-06">
+              <img src="dashboard/images/photo-06.jpg" alt="photo-06" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 07 -->
+            <article class="memory-card" id="photo-07" data-slot="photo-07">
+              <img src="dashboard/images/photo-07.jpg" alt="photo-07" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 08 -->
+            <article class="memory-card card-tall" id="photo-08" data-slot="photo-08">
+              <img src="dashboard/images/photo-08.jpg" alt="photo-08" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 09 -->
+            <article class="memory-card card-tall" id="photo-09" data-slot="photo-09">
+              <img src="dashboard/images/photo-09.jpg" alt="photo-09" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 10 -->
+            <article class="memory-card" id="photo-10" data-slot="photo-10">
+              <img src="dashboard/images/photo-10.jpg" alt="photo-10" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 11 -->
+            <article class="memory-card" id="photo-11" data-slot="photo-11">
+              <img src="dashboard/images/photo-11.jpg" alt="photo-11" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 12 -->
+            <article class="memory-card" id="photo-12" data-slot="photo-12">
+              <img src="dashboard/images/photo-12.jpg" alt="photo-12" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 13 -->
+            <article class="memory-card card-tall" id="photo-13" data-slot="photo-13">
+              <img src="dashboard/images/photo-13.jpg" alt="photo-13" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 14 -->
+            <article class="memory-card" id="photo-14" data-slot="photo-14">
+              <img src="dashboard/images/photo-14.jpg" alt="photo-14" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 15 -->
+            <article class="memory-card" id="photo-15" data-slot="photo-15">
+              <img src="dashboard/images/photo-15.jpg" alt="photo-15" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 16 -->
+            <article class="memory-card card-tall" id="photo-16" data-slot="photo-16">
+              <img src="dashboard/images/photo-16.jpg" alt="photo-16" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 17 -->
+            <article class="memory-card" id="photo-17" data-slot="photo-17">
+              <img src="dashboard/images/photo-17.jpg" alt="photo-17" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 18 -->
+            <article class="memory-card" id="photo-18" data-slot="photo-18">
+              <img src="dashboard/images/photo-18.jpg" alt="photo-18" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+
+
+            <!-- Photo Slot 19 -->
+            <article class="memory-card card-wide" id="photo-19" data-slot="photo-19">
+              <img src="dashboard/images/photo-19.jpg" alt="photo-19" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+
+            <!-- Photo Slot 20 -->
+            <article class="memory-card card-wide" id="photo-20" data-slot="photo-20">
+              <img src="dashboard/images/photo-20.jpg" alt="photo-20" class="photo-img">
+              <div class="photo-placeholder">++</div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Dashboard Footer -->
+        <footer class="dashboard-footer">
+          Made by your love for a very special birthday!!
+        </footer>
+      </div>
+    </section>
+
+    <!-- Interactive Playful Cartoon Character Companion (Rishi) - scoped to Dashboard -->
+    <button type="button" class="character-companion" id="characterCompanion"
+      aria-label="Interactive Playful Companion Rishi" title="Click Rishi for playful surprises!">
+      <span class="character-inner" id="characterInner">
+        <img src="raw/rishi.black.png" alt="Rishi cartoon companion" id="characterImg" class="character-img"
+          loading="eager" draggable="false">
+        <span class="character-shadow" id="characterShadow" aria-hidden="true"></span>
+        <span class="character-bubble" id="characterBubble" aria-hidden="true"></span>
+        <span class="character-sparkle-box" id="characterSparkleBox" aria-hidden="true"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- External Animation & Confetti Scripts -->
+  <script src="public/assets/gsap.min.js"></script>
+  <script src="public/assets/confetti.min.js"></script>
+
+  <!-- Single Unified Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
